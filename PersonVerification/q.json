@@ -1,0 +1,119 @@
+{
+  "query": {
+    "bool": {
+      "should": [
+        { "match": { "fullName": "Samir" }},
+        { "match": { "fullName": "AHADOV" }}
+      ],
+      "minimum_should_match":"90%"
+    }
+  }
+}
+
+{
+  "query": {
+    "common": {
+      "fullName": {
+        "query": "SAMIR TEYYUBOV AS",
+        "cutoff_frequency": 0.01,
+        "minimum_should_match": 1
+      }
+    }
+  }
+}
+
+
+{
+  "query": {
+    "match" : {
+      "fullName" : {
+        "query" : "SAMIR KAZIMLI",
+        "fuzziness":0,
+        "cutoff_frequency" : 0.0001
+      }
+    }
+  }
+}
+
+{
+  "query": {
+    "match" : {
+      "fullName" : {
+        "query" : "SAMIR KAZIMLI",
+        "fuzziness":0,
+        "cutoff_frequency" : 0.0001,
+        "max_expansions":12
+      }
+    }
+  }
+}
+
+
+{
+  "query":{
+    "bool":{
+      "should":[
+        {
+          "multi_match":{
+            "query":"Samir",
+            "fuzziness":"1",
+            "fields":[
+              "fullName"
+            ]
+          }
+        },
+        {
+          "multi_match":{
+            "query":"Suleymanov",
+            "fuzziness":"1",
+            "fields":[
+              "fullName"
+            ]
+          }
+        }
+      ],
+      "minimum_should_match":2
+    }
+  }
+}
+
+
+
+{
+  "query":{
+    "bool":{
+      "minimum_should_match":"0<1",
+      "must":[
+        {
+          "multi_match":{
+            "query":"DE HOLLANDA",
+            "fuzziness":"1",
+            "fields":[
+              "fullName"
+            ]
+          }
+        },
+        {
+          "multi_match":{
+            "query":"DE HOLLANDA",
+            "fuzziness":"1",
+            "fields":[
+              "fullName"
+            ]
+          }
+        },
+        {
+          "multi_match":{
+            "query":"qwe",
+            "fuzziness":"1",
+            "fields":[
+              "fullName"
+            ]
+          }
+        }
+
+      ]
+
+    }
+  }
+}

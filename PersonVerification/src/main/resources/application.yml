@@ -1,0 +1,15 @@
+servet:
+  port: 8080
+
+elasticsearch:
+  host: 10.0.4.27
+  port: 9200
+
+file:
+  upload:
+    path: "/opt/elasticsearch/in"
+  archive:
+    path: "/opt/elasticsearch/archive"
+
+logging:
+  path: "/opt/elasticsearch/log"

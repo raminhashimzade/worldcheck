@@ -1,0 +1,15 @@
+servet:
+  port: 8080
+
+elasticsearch:
+  host: localhost
+  port: 9200
+
+file:
+  upload:
+    path: "/Users/aaghazada/temp"
+  archive:
+    path: "/Users/aaghazada/temp/archive"
+
+logging:
+  path: "/Users/aaghazada/temp/log"

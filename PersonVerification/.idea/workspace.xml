@@ -1,0 +1,1180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="08a2d68e-978f-4ced-9353-9f2376f305e1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Database/auth.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/controller/PersonVerificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/exceprion/PersonVerificationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/black/list/BlackListPerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/PersonVerificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled1/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CODEOWNERS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config/checkstyle/checkstyle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../infra/terraform.tf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/NotFoundAwareDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/RestErrorResponseDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/bank/dict/DictReaderClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/card/CardReaderClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/egov/EGovClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/filestorage/FileStorageClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/filestorage/FileStorageClientImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/filestorage/FileStorageClientMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/filestorage/StorageClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/userinfo/UserInfoClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/userinfo/dto/AccountPermissionView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/userinfo/dto/AccountView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/userinfo/dto/AuthUserView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/client/userinfo/dto/CustomerView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/config/InterceptorConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/config/MessageConverterConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/config/WebFilterConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/controller/CustomerCardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/controller/ErrorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/controller/HealthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/controller/OrderEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/controller/OrderEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/dao/CustomerGsaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/dao/OrderDocumentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/dao/OrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/dao/model/CustomerGsaEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/dao/model/OrderDocumentEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/dao/model/OrderEmployeeEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/ClientException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/DPException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/EmployeeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/NotAuthenticatedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/OrderException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/OrderNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/RestErrorException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/exception/SalaryDocumentException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/logger/DPLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/mapper/CustomerCardMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/mapper/CustomerGsaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/mapper/CustomerGsaMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/mapper/OrderDocumentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/mapper/OrderEmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/mapper/OrderEmployeeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/mapper/PaginationMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/CustomerGsaView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/EmployeeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/EmployeeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/EmployeeInfoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/EmployeeInfoView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/EmployeeListRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/FileUploadRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/MultipartInputStreamFileResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/OrderListRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/PagingRestResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/RestResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/SalaryCardInfoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/SalaryCardView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/bank/dict/CustomerGsaDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/bank/dict/CustomerInfoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/bank/dict/CustomerStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/card/CardInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/card/CardInfoFilterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/egov/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/egov/EmployeeInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/egov/Gender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/egov/MaritalStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/egov/PersonalInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/filestorage/FileInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/userinfo/PaymentPermission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/userinfo/UserAuthentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/client/userinfo/UserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/common/FilteredRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/common/Pagination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/CardProductCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/CardType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/ErrorCodes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/OrderAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/OrderDocumentStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/OrderEmployeeStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/enums/ReaderErrorCodes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/error/ErrorLevel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/error/RestErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/error/ValidationError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/validation/OrderCardConstraint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/validation/OrderCardValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/model/validation/OrderCardValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/security/filter/SecurityFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/security/filter/SecurityFilterImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/security/filter/SecurityFilterMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/security/model/HeaderKeys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/CustomerCardService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/CustomerGsaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/OrderDocumentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/OrderEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/OrderEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/impl/CustomerCardServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/impl/CustomerGsaServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/impl/OrderDocumentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/impl/OrderEmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/impl/OrderEmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/mock/CustomerCardServiceMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/mock/CustomerGsaServiceMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/mock/OrderDocumentServiceMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/mock/OrderEmployeeServiceMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/mock/OrderEmployeeServiceMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/mock/OrderServiceMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/service/mock/OrderServiceMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/specification/OrderEmployeeSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/specification/OrderSpecification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/util/CheckViolationHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/util/ClientResponseHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/util/PaginationAndSortingHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/az/pashabank/dp/ms/salary/order/util/SalaryOrderHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/dev_session_data.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.0.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.1.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.2.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.3.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.4.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.5.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.6.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.7.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/1.0/changelog-1.8.0.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/liquibase/changelog-master.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/resources/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/TestUtils.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/client/filestorage/FileStorageClientImplTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/mapper/CustomerGsaMapperTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/mapper/OrderDocumentMapperTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/model/validation/OrderCardValidatorTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/model/validation/OrderCardValidatorTest.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/service/CustomerCardServiceImplTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/service/CustomerGsaServiceImplTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/service/OrderDocumentServiceImplTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/service/OrderEmployeeServiceImplTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/service/OrderEmployeeServiceImplTest.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/util/ClientResponseHelperTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/util/PaginationAndSortingHelperTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/groovy/az/pashabank/dp/ms/salary/order/util/SalaryOrderHelperTest.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/az/pashabank/dp/ms/salary/order/mapper/CustomerCardMapperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/az/pashabank/dp/ms/salary/order/mapper/OrderEmployeeMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/java/az/pashabank/dp/ms/salary/order/mapper/OrderEmployeeMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/az/pashabank/dp/ms/salary/order/mapper/OrderMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/java/az/pashabank/dp/ms/salary/order/mapper/OrderMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/contract/ms-e-gov/collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/contract/ms-e-gov/environment.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/contract/ms-filestorage/collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/contract/ms-filestorage/environment.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/contract/ms-users/collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/contract/ms-users/environment.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/contract/rest_contract_test.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/init.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/own-api/own_api_test.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/own-api/rest/collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/own-api/rest/environment.json" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PersonVerification" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/world/check/WorldCheckService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="112" column="66" selection-start-line="112" selection-start-column="66" selection-end-line="112" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#16#20#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/black/list/BlackListResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/world/check/WorldCheckResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/world/check/WorldCheckPerson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/FindPersonService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-185">
+              <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/PersonVerificationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/temp/updates_valid copy.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/black/list/BlackListService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="126" column="55" selection-start-line="126" selection-start-column="55" selection-end-line="126" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#readBlackList#0;class#BlackListService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Request</find>
+      <find>perfo</find>
+      <find>parameters</find>
+      <find>IndexRequest</find>
+      <find>create</find>
+      <find>person</find>
+      <find>&lt;person</find>
+      <find>DocumentsScheduler</find>
+      <find>System.out.println</find>
+      <find>&lt;/per</find>
+      <find>categ</find>
+      <find>alterna</find>
+      <find>world_check</find>
+      <find>black_list</find>
+      <find>blackListPeople</find>
+      <find>getName</find>
+      <find>faste</find>
+      <find>ObjectMapper</find>
+      <find>profile</find>
+      <find>&lt;profile</find>
+      <find>type</find>
+      <find>hard</find>
+      <find>rep</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>logger.info</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/controller/PersonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/ElasticSearchConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/util/ExcelReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/util/BlackListReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/util/BlackListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/BlackListPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/exceprion/PersonVerificationException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/scheduler/BlackListScheduler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/scheduler/WorldCheckScheduler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/parser/ParsedPersonUpdate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/parser/WorldCheckPersonUpdate.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/parser/XmlDataFileParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/parser/WorldCheckService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/world/check/WorldCheckPersonUpdate.java" />
+        <option value="$USER_HOME$/temp/updates_valid copy 2.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/PersonDto.java" />
+        <option value="$PROJECT_DIR$/q.json" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/BlackListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/WorldCheckService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/controller/PersonVerificationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/PersonVerificationRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/JaroWinklerDistanceConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/SourceSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/scheduler/DocumentsScheduler.java" />
+        <option value="$PROJECT_DIR$/delete.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/util/DateConverterUtil.java" />
+        <option value="$USER_HOME$/temp/updates_valid.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/black/list/BlackListPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/FindPersonService.java" />
+        <option value="$USER_HOME$/temp/archive/delete copy-2019-06-08T01:20:30.460321.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/LockMatch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/StringDistanceConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/black/list/BlackListService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/world/check/WorldCheckPerson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/black/list/BlackListResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/world/check/WorldCheckResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/PersonVerificationService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/world/check/WorldCheckService.java" />
+        <option value="$USER_HOME$/temp/updates_valid copy 16.-2019-06-06T18:31:22.740952.xml" />
+        <option value="$USER_HOME$/temp/updates_valid copy.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="person-verification" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="person-verification" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="person-verification" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="950" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="check" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="check" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonVerification" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PersonVerification" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="az.blacklist.person.verification.model.world.check" />
+      <recent name="az.blacklist.person.verification.parser" />
+      <recent name="az.blacklist.person.verification.service" />
+      <recent name="az.blacklist.person.verification.scheduler" />
+      <recent name="az.blacklist.person.verification.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="PersonVerification" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="az.blacklist.person.verification.Application" />
+      <option name="ACTIVE_PROFILES" value="dev" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08a2d68e-978f-4ced-9353-9f2376f305e1" name="Default Changelist" comment="" />
+      <created>1559580597515</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559580597515</updated>
+      <workItem from="1559580600853" duration="66006000" />
+      <workItem from="1559878146309" duration="745000" />
+      <workItem from="1559938123166" duration="10266000" />
+      <workItem from="1559994408061" duration="3150000" />
+      <workItem from="1560085946266" duration="1714000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="81881000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="950" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49829933" visible="true" weight="0.26678878" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Favorites" order="4" sideWeight="0.5017007" side_tool="true" weight="0.26190478" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5466201" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
+      <window_info anchor="bottom" id="Docker" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Spring" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32959184" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32959184" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.27106228" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0-sources.jar!/org/apache/lucene/search/spell/JaroWinklerDistance.java</url>
+          <line>103</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0-sources.jar!/org/apache/lucene/search/spell/LevenshteinDistance.java</url>
+          <line>105</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/world/check/WorldCheckService.java</url>
+          <line>234</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/world/check/WorldCheckService.java</url>
+          <line>216</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/world/check/WorldCheckService.java</url>
+          <line>296</line>
+          <properties />
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/7.0.0/elasticsearch-7.0.0-sources.jar!/org/elasticsearch/index/reindex/ReindexRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+          <folding>
+            <element signature="e#2529#2530#0" expanded="true" />
+            <element signature="e#2596#2597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-client/7.0.0/elasticsearch-rest-client-7.0.0.jar!/org/elasticsearch/client/RequestOptions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar!/org/apache/commons/lang3/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3020" column="22" selection-start-line="3020" selection-start-column="22" selection-end-line="3020" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0.jar!/org/apache/lucene/search/spell/JaroWinklerDistance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="88" column="24" lean-forward="true" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/7.0.0/elasticsearch-7.0.0-sources.jar!/org/elasticsearch/action/search/SearchResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+          <folding>
+            <element signature="e#4249#4250#0" expanded="true" />
+            <element signature="e#4295#4296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="164" column="44" lean-forward="true" selection-start-line="163" selection-start-column="11" selection-end-line="164" selection-end-column="44" />
+          <folding>
+            <element signature="e#7087#7088#0" expanded="true" />
+            <element signature="e#7150#7151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0-sources.jar!/org/apache/lucene/search/spell/LevenshteinDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0-sources.jar!/org/apache/lucene/search/spell/StringDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0-sources.jar!/org/apache/lucene/search/spell/JaroWinklerDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0-sources.jar!/org/apache/lucene/search/spell/NGramDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+          <folding>
+            <element signature="e#1993#1994#0" expanded="true" />
+            <element signature="e#2010#2011#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/8.0.0/lucene-suggest-8.0.0-sources.jar!/org/apache/lucene/search/spell/LuceneLevenshteinDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/world-check-deleted-day-v2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/world-check-day.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8280">
+          <caret line="552" column="2008" selection-start-line="552" selection-start-column="2008" selection-end-line="552" selection-end-column="2008" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/scheduler/DocumentsScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/q.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/7.0.0/elasticsearch-7.0.0-sources.jar!/org/elasticsearch/index/query/TermQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+          <folding>
+            <element signature="e#1760#1761#0" expanded="true" />
+            <element signature="e#1808#1809#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/7.0.0/elasticsearch-7.0.0-sources.jar!/org/elasticsearch/action/search/SearchRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/world-check-deleted-day.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="222" selection-end-line="222" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delete.xml" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/7.0.0/elasticsearch-7.0.0-sources.jar!/org/elasticsearch/index/reindex/DeleteByQueryRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+          <folding>
+            <element signature="e#2809#2810#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+            <element signature="e#3002#3003#0" expanded="true" />
+            <element signature="e#3036#3037#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-high-level-client/7.1.1/elasticsearch-rest-high-level-client-7.1.1-sources.jar!/org/elasticsearch/client/RestHighLevelClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="566" column="72" selection-start-line="566" selection-start-column="52" selection-end-line="566" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.7.2/elasticsearch-6.7.2.jar!/org/elasticsearch/action/bulk/BulkRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="48" column="40" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.7.2/elasticsearch-6.7.2.jar!/org/elasticsearch/action/index/IndexRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="72" column="11" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/elasticsearch/6.7.2/elasticsearch-6.7.2-sources.jar!/org/elasticsearch/action/index/IndexRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-684">
+          <caret line="250" column="25" selection-start-line="250" selection-start-column="21" selection-end-line="250" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/time/format/DateTimeFormatter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="1948" column="39" selection-start-line="1948" selection-start-column="17" selection-end-line="1948" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/time/LocalDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="425" column="28" selection-start-line="425" selection-start-column="28" selection-end-line="425" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/util/DateConverterUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/exceprion/PersonVerificationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="38" />
+          <folding>
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/controller/PersonVerificationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/temp/updates_valid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="78" column="46" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/temp/archive/delete copy-2019-06-08T01:20:30.460321.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-suggest/7.7.0/lucene-suggest-7.7.0.jar!/org/apache/lucene/search/spell/LuceneLevenshteinDistance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/LockMatch.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/ElasticSearchConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/config/StringDistanceConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/PersonVerificationRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/SourceSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1075#1076#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/black/list/BlackListPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/black/list/BlackListResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/world/check/WorldCheckResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/PersonVerificationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/model/world/check/WorldCheckPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/world/check/WorldCheckService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="112" column="66" selection-start-line="112" selection-start-column="66" selection-end-line="112" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/FindPersonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185">
+          <caret line="39" column="45" selection-start-line="39" selection-start-column="45" selection-end-line="39" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/az/blacklist/person/verification/service/black/list/BlackListService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="126" column="55" selection-start-line="126" selection-start-column="55" selection-end-line="126" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readBlackList#0;class#BlackListService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/temp/updates_valid copy 16.-2019-06-06T18:31:22.740952.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/temp/updates_valid copy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#16#20#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>PersonVerification</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
