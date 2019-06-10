@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "701fa7e3-3066-411f-b784-d417ec3df60b",
+		"name": "person-verification",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/person/verification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fullName\":\"Abbas Nasibov\",\n\t\"percentage\": 80\n}"
+				},
+				"url": {
+					"raw": "http://10.0.4.27:8080/person/verification",
+					"protocol": "http",
+					"host": [
+						"10",
+						"0",
+						"4",
+						"27"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"verification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "elastic-search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"multi_match\" : {\n      \"query\":      \"AHADOV RAMIZ AHAD\",\n      \"type\":       \"best_fields\",\n      \"fields\":     [ \"fullName\" ],\n      \"cutoff_frequency\" : 0.01,\n      \"fuzziness\":5\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "localhost:9200/world_check/_search?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"world_check",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9200/world_check/_search?pretty",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"terms\": {\n      \"_id\": [ \"22\",\"14343\",\"555\" ] \n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "localhost:9200/world_check/_search?pretty",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"world_check",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "pretty",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9200/black_list/_search?pretty Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"query\": {\n    \"terms\": {\n      \"_id\": [ \"FnUyNmsBnYpy8bTAU4Gj\",\"2042168\",\"2896277\" ] \n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "localhost:9200/black_list/_search",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"black_list",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
