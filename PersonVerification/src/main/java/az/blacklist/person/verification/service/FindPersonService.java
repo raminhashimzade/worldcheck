@@ -52,7 +52,7 @@ public abstract class FindPersonService<T> {
 		BoolQueryBuilder query = new BoolQueryBuilder();
 
 		query.must(new MultiMatchQueryBuilder(fullName, sourceSystem.getColumns().toArray(new String[0]))
-				.cutoffFrequency(0.0001F).fuzziness(Fuzziness.TWO));
+				.cutoffFrequency(0.0001F).fuzziness(Fuzziness.ONE));
 
 		sourceBuilder.query(query);
 		SearchRequest searchRequest = new SearchRequest(sourceSystem.getIndexName());
