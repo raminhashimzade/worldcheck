@@ -15,7 +15,7 @@ public class PersonVerificationRequest {
     private String fullName;
 
     @NotNull
-    private Integer percentage;
+    private Integer percentage;    
 
-   
+    private String source;   
 }

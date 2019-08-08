@@ -39,11 +39,23 @@ public class PersonVerificationService {
         double percentage = request.getPercentage() / 100D;
 
         Map<String, Object> result = new HashMap<>();
-
-        List<WorldCheckPerson> worldCheckPeople = worldCheckService.findPeople(fullName, percentage);
-        List<BlackListPerson> blackListPeople = blackListService.findPeople(fullName, percentage);
-        result.put(SourceSystem.WORLD_CHECK.getName(), new WorldCheckResponse(worldCheckPeople.size(), worldCheckPeople));
-        result.put(SourceSystem.BLACK_LIST.getName(), new BlackListResponse(blackListPeople.size(), blackListPeople));
+        List<WorldCheckPerson> worldCheckPeople = null;
+        List<BlackListPerson> blackListPeople = null;
+        
+        if (request.getSource().equals("W")) {
+        	worldCheckPeople = worldCheckService.findPeople(fullName, percentage);
+        	result.put(SourceSystem.WORLD_CHECK.getName(), new WorldCheckResponse(worldCheckPeople.size(), worldCheckPeople));
+        }        
+        else if (request.getSource().equals("B")) {
+        	blackListPeople = blackListService.findPeople(fullName, percentage);
+        	result.put(SourceSystem.BLACK_LIST.getName(), new BlackListResponse(blackListPeople.size(), blackListPeople));
+        }
+        else if (request.getSource().equals("WB")) {
+        	worldCheckPeople = worldCheckService.findPeople(fullName, percentage);
+        	blackListPeople = blackListService.findPeople(fullName, percentage);
+        	result.put(SourceSystem.WORLD_CHECK.getName(), new WorldCheckResponse(worldCheckPeople.size(), worldCheckPeople));
+        	result.put(SourceSystem.BLACK_LIST.getName(), new BlackListResponse(blackListPeople.size(), blackListPeople));
+        }
 
         logger.info("Person verification end {}", request);
         return result;
