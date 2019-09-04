@@ -77,5 +77,6 @@ public abstract class FindPersonService<T> {
 
 		logger.info("Find person {} in {} end", fullName, sourceSystem);
 		return foundPeople;
-	}
+	}	
+
 }

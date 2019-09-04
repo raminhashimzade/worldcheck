@@ -35,7 +35,7 @@ public class PersonVerificationService {
     public Map<String, Object> getPerson(PersonVerificationRequest request) {
         logger.info("Person verification start {}", request);
 
-        String fullName = request.getFullName();
+        String fullName = translitFromAz(request.getFullName());
         double percentage = request.getPercentage() / 100D;
 
         Map<String, Object> result = new HashMap<>();
@@ -60,5 +60,32 @@ public class PersonVerificationService {
         logger.info("Person verification end {}", request);
         return result;
     }
+    
+    private String translitFromAz(String fullName) {
+    	String res = "";
+    	res = fullName.replace("Ə", "A");
+    	res = res.replace("Ö", "O");
+    	res = res.replace("Ü", "U");
+    	res = res.replace("İ", "I");
+    	res = res.replace("J", "ZH");
+    	res = res.replace("C", "J");
+    	res = res.replace("Ş", "SH");
+    	res = res.replace("Ğ", "GH");
+    	res = res.replace("Ç", "CH");
+    	res = res.replace("X", "KH");
+    	res = res.replace("Q", "G");
+    	res = res.replace("ö", "o");
+    	res = res.replace("ü", "u");
+    	res = res.replace("ı", "i");
+    	res = res.replace("j", "zh");    	
+    	res = res.replace("c", "j");
+    	res = res.replace("ş", "sh");
+    	res = res.replace("ğ", "gh");
+    	res = res.replace("ç", "ch");
+    	res = res.replace("x", "kh");
+    	res = res.replace("q", "g");
+    	
+    	return res;
+    }	    
 
 }

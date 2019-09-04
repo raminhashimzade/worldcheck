@@ -222,12 +222,9 @@ public class WorldCheckService extends FindPersonService<WorldCheckPerson> {
 		logger.info("Find person {} in WORLD_CHECK", fullName);
 		List<WorldCheckPerson> worldCheckPersonList = super.findPeople(fullName);
 
-		worldCheckPersonList.removeIf(p -> stringDistance
-				.getDistance(Objects.toString(p.getFullName1(), "").toLowerCase(), fullName.toLowerCase()) <= percentage
-				&& stringDistance.getDistance(Objects.toString(p.getFullName2(), "").toLowerCase(),
-						fullName.toLowerCase()) <= percentage
-				&& p.getAliases().stream()
-						.allMatch(a -> stringDistance.getDistance(a, fullName.toLowerCase()) <= percentage));
+		worldCheckPersonList.removeIf(p -> stringDistance.getDistance(Objects.toString(p.getFullName1(), "").toLowerCase(), fullName.toLowerCase()) <= percentage
+				&& stringDistance.getDistance(Objects.toString(p.getFullName2(), "").toLowerCase(), fullName.toLowerCase()) <= percentage
+				&& p.getAliases().stream().allMatch(a -> stringDistance.getDistance(a, fullName.toLowerCase()) <= percentage));
 
 		worldCheckPersonList.forEach(p -> {
 			double d1 = p.getFullName1() != null

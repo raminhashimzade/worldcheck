@@ -44,7 +44,8 @@ public class DocumentsScheduler {
         this.archivePath = archivePath;
     }
 
-    @Scheduled(fixedDelay = Long.MAX_VALUE)
+    //@Scheduled(fixedDelay = Long.MAX_VALUE)
+    @Scheduled(fixedDelay = 60000)
     public void persistFile() {
 
         try {
