@@ -64,8 +64,7 @@ public class BlackListService extends FindPersonService<BlackListPerson> {
                         .category(formatter.formatCellValue(row.getCell(2)))
                         .dateOfBirth(formatter.formatCellValue(row.getCell(3)))
                         .subCategory(formatter.formatCellValue(row.getCell(4)))
-                        .note(formatter.formatCellValue(row.getCell(5)))
-                        .build()
+                        .note(formatter.formatCellValue(row.getCell(5))).build()                        
                 );
             });
 
@@ -138,7 +137,8 @@ public class BlackListService extends FindPersonService<BlackListPerson> {
     
     private String translitFromAz(String fullName) {
     	String res = "";
-    	res = fullName.replace("Ə", "A");
+    	res = fullName.toUpperCase();
+    	res = res.replace("Ə", "A");
     	res = res.replace("Ö", "O");
     	res = res.replace("Ü", "U");
     	res = res.replace("İ", "I");
@@ -158,8 +158,10 @@ public class BlackListService extends FindPersonService<BlackListPerson> {
     	res = res.replace("ğ", "gh");
     	res = res.replace("ç", "ch");
     	res = res.replace("x", "kh");
-    	res = res.replace("q", "g");
-    	
+    	res = res.replace("q", "g");    	
+    	res = res.replace("OGHLU", "");
+    	res = res.replace("QIZI", "");
+    	res = res.trim();
     	return res;
     }
 }

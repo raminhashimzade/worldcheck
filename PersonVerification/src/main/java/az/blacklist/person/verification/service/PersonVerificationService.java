@@ -36,6 +36,7 @@ public class PersonVerificationService {
         logger.info("Person verification start {}", request);
 
         String fullName = translitFromAz(request.getFullName());
+        String middleName = translitFromAz(request.getMiddleName());
         double percentage = request.getPercentage() / 100D;
 
         Map<String, Object> result = new HashMap<>();
@@ -45,14 +46,14 @@ public class PersonVerificationService {
         if (request.getSource().equals("W")) {
         	worldCheckPeople = worldCheckService.findPeople(fullName, percentage);
         	result.put(SourceSystem.WORLD_CHECK.getName(), new WorldCheckResponse(worldCheckPeople.size(), worldCheckPeople));
-        }        
+        }
         else if (request.getSource().equals("B")) {
-        	blackListPeople = blackListService.findPeople(fullName, percentage);
+        	blackListPeople = blackListService.findPeople(fullName + " " + middleName, percentage);
         	result.put(SourceSystem.BLACK_LIST.getName(), new BlackListResponse(blackListPeople.size(), blackListPeople));
         }
         else if (request.getSource().equals("WB")) {
         	worldCheckPeople = worldCheckService.findPeople(fullName, percentage);
-        	blackListPeople = blackListService.findPeople(fullName, percentage);
+        	blackListPeople = blackListService.findPeople(fullName + " " + middleName, percentage);
         	result.put(SourceSystem.WORLD_CHECK.getName(), new WorldCheckResponse(worldCheckPeople.size(), worldCheckPeople));
         	result.put(SourceSystem.BLACK_LIST.getName(), new BlackListResponse(blackListPeople.size(), blackListPeople));
         }
@@ -64,6 +65,7 @@ public class PersonVerificationService {
     private String translitFromAz(String fullName) {
     	String res = "";
     	res = fullName.replace("Ə", "A");
+    	res = res.toUpperCase();
     	res = res.replace("Ö", "O");
     	res = res.replace("Ü", "U");
     	res = res.replace("İ", "I");
@@ -84,7 +86,6 @@ public class PersonVerificationService {
     	res = res.replace("ç", "ch");
     	res = res.replace("x", "kh");
     	res = res.replace("q", "g");
-    	
     	return res;
     }	    
 
