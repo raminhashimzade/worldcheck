@@ -6,7 +6,11 @@ import org.apache.logging.log4j.core.util.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -23,6 +27,7 @@ import java.time.LocalDateTime;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
 
+@EnableScheduling
 @Component
 public class DocumentsScheduler {
 
@@ -43,11 +48,19 @@ public class DocumentsScheduler {
         this.uploadPath = uploadPath;
         this.archivePath = archivePath;
     }
+    
+    @Bean
+    public TaskScheduler taskScheduler() {
+        return new ConcurrentTaskScheduler();
+    }
 
     //@Scheduled(fixedDelay = Long.MAX_VALUE)
-    @Scheduled(fixedDelay = 60000)
+    @Scheduled(fixedDelay = 1000)
     public void persistFile() {
+    	
+    	logger.debug("schedule start");
 
+        
         try {
             WatchService watchService = FileSystems.getDefault().newWatchService();
 
@@ -89,16 +102,17 @@ public class DocumentsScheduler {
     }
 
     private void archiveFile(File file) throws IOException {
+    	
+    	logger.debug("start delete file");
+    	//file.delete();
+    	
         String fileExtension = FileUtils.getFileExtension(file);
-        String fileName = String.format("%s-%s.%s",
-                file.getName().replace(String.format(".%s", fileExtension), ""),
-                LocalDateTime.now(),
-                fileExtension);
+        String fileName = String.format("%s-%s.%s",file.getName().replace(String.format(".%s", fileExtension), ""), LocalDateTime.now(), fileExtension);
 
-        Files.move(file.toPath(), Paths.get(String.format("%s/%s",
-                archivePath,
-                fileName)),
-                REPLACE_EXISTING
-        );
+        logger.error("source : ", file.toPath());
+        logger.error("target : ", Paths.get(String.format("%s/%s",archivePath,fileName)));
+        
+        Files.move(file.toPath(), Paths.get(String.format("%s/%s",archivePath,fileName)), REPLACE_EXISTING );
+        
     }
 }

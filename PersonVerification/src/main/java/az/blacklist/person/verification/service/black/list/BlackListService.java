@@ -37,131 +37,125 @@ import static org.elasticsearch.client.RequestOptions.DEFAULT;
 @Service
 public class BlackListService extends FindPersonService<BlackListPerson> {
 
-    private final Logger logger = LoggerFactory.getLogger(BlackListService.class);
+	private final Logger logger = LoggerFactory.getLogger(BlackListService.class);
 
-    public BlackListService(ObjectMapper objectMapper,
-                            RestHighLevelClient restHighLevelClient,
-                            StringDistance stringDistance) {
-        super(objectMapper, restHighLevelClient, stringDistance);
-    }
+	public BlackListService(ObjectMapper objectMapper, RestHighLevelClient restHighLevelClient,
+			StringDistance stringDistance) {
+		super(objectMapper, restHighLevelClient, stringDistance);
+	}
 
-    public void readBlackList(File file) {
-        logger.info("Start read file {}", file.getName());
-        List<BlackListPerson> blackListPeople = new ArrayList<>();
+	public void readBlackList(File file) {
+		logger.info("Start read file {}", file.getName());
+		List<BlackListPerson> blackListPeople = new ArrayList<>();
 
-        try (Workbook workbook = WorkbookFactory.create(file)) {
-            Sheet sheet = workbook.getSheetAt(0);
-            DataFormatter formatter = new DataFormatter();
+		try (Workbook workbook = WorkbookFactory.create(file)) {
+			Sheet sheet = workbook.getSheetAt(0);
+			DataFormatter formatter = new DataFormatter();
 
-            sheet.forEach(row -> {
-                if (row.getRowNum() == 0) return;
-                String fullName = formatter.formatCellValue(row.getCell(1));
-                if (StringUtils.isEmpty(fullName)) return;
+			sheet.forEach(row -> {
 
-                blackListPeople.add(BlackListPerson.builder()
-                        .number(formatter.formatCellValue(row.getCell(0)))
-                        .fullName(translitFromAz(fullName.trim()))
-                        .category(formatter.formatCellValue(row.getCell(2)))
-                        .dateOfBirth(formatter.formatCellValue(row.getCell(3)))
-                        .subCategory(formatter.formatCellValue(row.getCell(4)))
-                        .note(formatter.formatCellValue(row.getCell(5))).build()                        
-                );
-            });
+				logger.info("rownum before add = " + row.getRowNum());
 
-            saveBlackListPeople(blackListPeople);
-            logger.info("End read file {}", file.getName());
-        } catch (InvalidFormatException | IOException e) {
-            logger.error("Can not parse Black List file {}", file.getName(), e);
-        }
-    }
+				if (row.getRowNum() == 0)
+					return;
+				String fullName = formatter.formatCellValue(row.getCell(1));
+				if (StringUtils.isEmpty(fullName))
+					return;
 
-    @Override
-    public SourceSystem getSourceSystem() {
-        return BLACK_LIST;
-    }
+				blackListPeople.add(BlackListPerson.builder().number(formatter.formatCellValue(row.getCell(0)))
+						.fullName(translitFromAz(fullName.trim())).category(formatter.formatCellValue(row.getCell(2)))
+						.dateOfBirth(formatter.formatCellValue(row.getCell(3)))
+						.subCategory(formatter.formatCellValue(row.getCell(4)))
+						.note(formatter.formatCellValue(row.getCell(5))).build());
 
-    public List<BlackListPerson> findPeople(String fullName, Double percentage) {
-        logger.info("Find person {} in BLACK_LIST", fullName);
+				logger.info("rownum after add = " + row.getRowNum());
+			});
 
+			saveBlackListPeople(blackListPeople);
+			logger.info("End read file {}", file.getName());
+		} catch (InvalidFormatException | IOException e) {
+			logger.error("Can not parse Black List file {}", file.getName(), e);
+		}
+	}
 
-        List<BlackListPerson> blackListPeople = super.findPeople(fullName);
+	@Override
+	public SourceSystem getSourceSystem() {
+		return BLACK_LIST;
+	}
 
-        blackListPeople.removeIf(p -> stringDistance.getDistance(nameForDistance(p.getFullName()),
-                nameForDistance(fullName)) < percentage);
+	public List<BlackListPerson> findPeople(String fullName, Double percentage) {
+		logger.info("Find person {} in BLACK_LIST", fullName);
 
-        blackListPeople.forEach(p -> p.setPercentage(
-                (int) (stringDistance.getDistance(nameForDistance(p.getFullName()),
-                        nameForDistance(fullName)) * 100)
-                )
-        );
-        return blackListPeople.stream()
-                .sorted(Comparator.comparing(BlackListPerson::getPercentage).reversed())
-                .collect(Collectors.toList());
-    }
+		List<BlackListPerson> blackListPeople = super.findPeople(fullName);
 
-    private void saveBlackListPeople(List<BlackListPerson> blackListPeople) {
-        logger.info("Black list start save people");
-        BulkRequest request = new BulkRequest();
+		blackListPeople.removeIf(p -> stringDistance.getDistance(nameForDistance(p.getFullName()),
+				nameForDistance(fullName)) < percentage);
 
-        String blackList = BLACK_LIST.getIndexName();
+		blackListPeople.forEach(p -> p.setPercentage(
+				(int) (stringDistance.getDistance(nameForDistance(p.getFullName()), nameForDistance(fullName)) * 100)));
+		return blackListPeople.stream().sorted(Comparator.comparing(BlackListPerson::getPercentage).reversed())
+				.collect(Collectors.toList());
+	}
 
-        blackListPeople.forEach(
-                p -> {
-                    try {
-                        request.add(new IndexRequest(blackList, "doc")
-                                .source(objectMapper.writeValueAsString(p),
-                                        XContentType.JSON));
-                    } catch (JsonProcessingException e) {
-                        logger.error("Can not save person p {}", p, e);
-                    }
-                }
-        );
+	private void saveBlackListPeople(List<BlackListPerson> blackListPeople) {
+		logger.info("Black list start save people");
+		BulkRequest request = new BulkRequest();
 
-        request.timeout(TimeValue.timeValueMinutes(5));
-        logger.info("Black list end save people");
-        try {
-            if (restHighLevelClient.indices().exists(new GetIndexRequest(blackList), DEFAULT)) {
-                restHighLevelClient.indices().delete(new DeleteIndexRequest(blackList), DEFAULT);
-            }
-            restHighLevelClient.bulk(request, DEFAULT);
-        } catch (IOException e) {
-            logger.error("Can not save Black list file", e);
-        }
-    }
+		String blackList = BLACK_LIST.getIndexName();
 
-    private String nameForDistance(String fullName) {
-        List<String> nameParts = Arrays.asList(fullName.toLowerCase().split(" "));
-        nameParts.sort(String::compareTo);
-        return String.join(" ", nameParts);
-    }
-    
-    private String translitFromAz(String fullName) {
-    	String res = "";
-    	res = fullName.toUpperCase();
-    	res = res.replace("Ə", "A");
-    	res = res.replace("Ö", "O");
-    	res = res.replace("Ü", "U");
-    	res = res.replace("İ", "I");
-    	res = res.replace("J", "ZH");
-    	res = res.replace("C", "J");
-    	res = res.replace("Ş", "SH");
-    	res = res.replace("Ğ", "GH");
-    	res = res.replace("Ç", "CH");
-    	res = res.replace("X", "KH");
-    	res = res.replace("Q", "G");
-    	res = res.replace("ö", "o");
-    	res = res.replace("ü", "u");
-    	res = res.replace("ı", "i");
-    	res = res.replace("j", "zh");    	
-    	res = res.replace("c", "j");
-    	res = res.replace("ş", "sh");
-    	res = res.replace("ğ", "gh");
-    	res = res.replace("ç", "ch");
-    	res = res.replace("x", "kh");
-    	res = res.replace("q", "g");    	
-    	res = res.replace("OGHLU", "");
-    	res = res.replace("QIZI", "");
-    	res = res.trim();
-    	return res;
-    }
+		blackListPeople.forEach(p -> {
+			try {
+				request.add(new IndexRequest(blackList, "doc").source(objectMapper.writeValueAsString(p), XContentType.JSON));
+			} catch (JsonProcessingException e) {
+				logger.error("Can not save person p {}", p, e);
+			}
+		});
+
+		request.timeout(TimeValue.timeValueMinutes(5));
+		logger.info("Black list end save people");
+		try {
+			if (restHighLevelClient.indices().exists(new GetIndexRequest(blackList), DEFAULT)) {
+				restHighLevelClient.indices().delete(new DeleteIndexRequest(blackList), DEFAULT);
+			}
+			restHighLevelClient.bulk(request, DEFAULT);
+		} catch (IOException e) {
+			logger.error("Can not save Black list file", e);
+		}
+	}
+
+	private String nameForDistance(String fullName) {
+		List<String> nameParts = Arrays.asList(fullName.toLowerCase().split(" "));
+		nameParts.sort(String::compareTo);
+		return String.join(" ", nameParts);
+	}
+
+	private String translitFromAz(String fullName) {
+		String res = "";
+		res = fullName.toUpperCase();
+		res = res.replace("Ə", "A");
+		res = res.replace("Ö", "O");
+		res = res.replace("Ü", "U");
+		res = res.replace("İ", "I");
+		res = res.replace("J", "ZH");
+		res = res.replace("C", "J");
+		res = res.replace("Ş", "SH");
+		res = res.replace("Ğ", "GH");
+		res = res.replace("Ç", "CH");
+		res = res.replace("X", "KH");
+		res = res.replace("Q", "G");
+		res = res.replace("ö", "o");
+		res = res.replace("ü", "u");
+		res = res.replace("ı", "i");
+		res = res.replace("j", "zh");
+		res = res.replace("c", "j");
+		res = res.replace("ş", "sh");
+		res = res.replace("ğ", "gh");
+		res = res.replace("ç", "ch");
+		res = res.replace("x", "kh");
+		res = res.replace("q", "g");
+		res = res.replace("OGHLU", "");
+		res = res.replace("QIZI", "");
+		res = res.trim();
+		return res;
+	}
 }
