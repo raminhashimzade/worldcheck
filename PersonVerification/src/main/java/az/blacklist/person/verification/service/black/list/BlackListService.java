@@ -1,12 +1,17 @@
 package az.blacklist.person.verification.service.black.list;
 
-import az.blacklist.person.verification.model.SourceSystem;
-import az.blacklist.person.verification.model.black.list.BlackListPerson;
-import az.blacklist.person.verification.service.FindPersonService;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import static az.blacklist.person.verification.model.SourceSystem.BLACK_LIST;
+import static org.elasticsearch.client.RequestOptions.DEFAULT;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.apache.lucene.search.spell.StringDistance;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -23,16 +28,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import static az.blacklist.person.verification.model.SourceSystem.BLACK_LIST;
-import static org.elasticsearch.client.RequestOptions.DEFAULT;
+import az.blacklist.person.verification.model.SourceSystem;
+import az.blacklist.person.verification.model.black.list.BlackListPerson;
+import az.blacklist.person.verification.service.FindPersonService;
 
 @Service
 public class BlackListService extends FindPersonService<BlackListPerson> {
@@ -45,38 +46,44 @@ public class BlackListService extends FindPersonService<BlackListPerson> {
 	}
 
 	public void readBlackList(File file) {
-		logger.info("Start read file {}", file.getName());
-		List<BlackListPerson> blackListPeople = new ArrayList<>();
+        logger.info("Start read file {}", file.getName());
+        List<BlackListPerson> blackListPeople = new ArrayList<>();
 
-		try (Workbook workbook = WorkbookFactory.create(file)) {
-			Sheet sheet = workbook.getSheetAt(0);
-			DataFormatter formatter = new DataFormatter();
+        try (Workbook workbook = WorkbookFactory.create(file)) {
+            Sheet sheet = workbook.getSheetAt(0);
+            DataFormatter formatter = new DataFormatter();
 
-			sheet.forEach(row -> {
+            sheet.forEach(row -> {
 
-				logger.info("rownum before add = " + row.getRowNum());
+                logger.info("rownum before add = " + row.getRowNum());
 
-				if (row.getRowNum() == 0)
-					return;
-				String fullName = formatter.formatCellValue(row.getCell(1));
-				if (StringUtils.isEmpty(fullName))
-					return;
+                if (row.getRowNum() == 0)
+                    return;
+                String fullName = formatter.formatCellValue(row.getCell(0));
+                if (StringUtils.isEmpty(fullName))
+                    return;
 
-				blackListPeople.add(BlackListPerson.builder().number(formatter.formatCellValue(row.getCell(0)))
-						.fullName(translitFromAz(fullName.trim())).category(formatter.formatCellValue(row.getCell(2)))
-						.dateOfBirth(formatter.formatCellValue(row.getCell(3)))
-						.subCategory(formatter.formatCellValue(row.getCell(4)))
-						.note(formatter.formatCellValue(row.getCell(5))).build());
+                String dateOfBirth = formatter.formatCellValue(row.getCell(2)).isBlank() ?
+                        null : formatter.formatCellValue(row.getCell(2)).replaceAll("/", "-");
 
-				logger.info("rownum after add = " + row.getRowNum());
-			});
+                blackListPeople.add(BlackListPerson.builder().number(formatter.formatCellValue(row.getCell(4)))
+                        .fullName(translitFromAz(fullName.trim()))
+                        .category(formatter.formatCellValue(row.getCell(1)))
+                        .dateOfBirth(dateOfBirth)
+                        .subCategory(formatter.formatCellValue(row.getCell(3)))
+                        .note(String.format("%s %s",
+                                formatter.formatCellValue(row.getCell(5)),
+                                formatter.formatCellValue(row.getCell(6))).replaceAll("/", "-")).build());
 
-			saveBlackListPeople(blackListPeople);
-			logger.info("End read file {}", file.getName());
-		} catch (InvalidFormatException | IOException e) {
-			logger.error("Can not parse Black List file {}", file.getName(), e);
-		}
-	}
+                logger.info("rownum after add = " + row.getRowNum());
+            });
+
+            saveBlackListPeople(blackListPeople);
+            logger.info("End read file {}", file.getName());
+        } catch (Exception e) {
+            logger.error("Can not parse Black List file {}", file.getName(), e);
+        }
+    }
 
 	@Override
 	public SourceSystem getSourceSystem() {

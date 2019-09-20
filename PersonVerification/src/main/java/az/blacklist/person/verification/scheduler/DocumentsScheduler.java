@@ -1,7 +1,14 @@
 package az.blacklist.person.verification.scheduler;
 
-import az.blacklist.person.verification.service.black.list.BlackListService;
-import az.blacklist.person.verification.service.world.check.WorldCheckService;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.util.Arrays;
+
 import org.apache.logging.log4j.core.util.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,106 +20,83 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.concurrent.ConcurrentTaskScheduler;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.WatchEvent;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
-import java.time.LocalDateTime;
-
-import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import static java.nio.file.StandardWatchEventKinds.ENTRY_CREATE;
+import az.blacklist.person.verification.service.black.list.BlackListService;
+import az.blacklist.person.verification.service.world.check.WorldCheckService;
 
 @EnableScheduling
 @Component
 public class DocumentsScheduler {
 
-    private static final Logger logger = LoggerFactory.getLogger(DocumentsScheduler.class);
+	private static final Logger logger = LoggerFactory.getLogger(DocumentsScheduler.class);
 
-    private final BlackListService blackListService;
-    private final WorldCheckService worldCheckService;
-    private final String uploadPath;
-    private final String archivePath;
+	private final BlackListService blackListService;
+	private final WorldCheckService worldCheckService;
+	private final String uploadPath;
+	private final String archivePath;
 
+	public DocumentsScheduler(BlackListService blackListService, WorldCheckService worldCheckService,
+			@Value("${file.upload.path}") String uploadPath, @Value("${file.archive.path}") String archivePath) {
+		this.blackListService = blackListService;
+		this.worldCheckService = worldCheckService;
+		this.uploadPath = uploadPath;
+		this.archivePath = archivePath;
+	}
 
-    public DocumentsScheduler(BlackListService blackListService,
-                              WorldCheckService worldCheckService,
-                              @Value("${file.upload.path}") String uploadPath,
-                              @Value("${file.archive.path}") String archivePath) {
-        this.blackListService = blackListService;
-        this.worldCheckService = worldCheckService;
-        this.uploadPath = uploadPath;
-        this.archivePath = archivePath;
-    }
-    
-    @Bean
-    public TaskScheduler taskScheduler() {
-        return new ConcurrentTaskScheduler();
-    }
+	@Bean
+	public TaskScheduler taskScheduler() {
+		return new ConcurrentTaskScheduler();
+	}
 
-    //@Scheduled(fixedDelay = Long.MAX_VALUE)
-    @Scheduled(fixedDelay = 1000)
-    public void persistFile() {
-    	
-    	logger.debug("schedule start");
+	@Scheduled(fixedDelay = 10_000)
+	public void persistFile() {
 
-        
-        try {
-            WatchService watchService = FileSystems.getDefault().newWatchService();
+		logger.debug("schedule start");
 
-            Path logDir = Paths.get(uploadPath);
-            logDir.register(watchService, ENTRY_CREATE);
+		File folder = new File(uploadPath);
+		File[] listOfFiles = folder.listFiles();
 
-            WatchKey key;
-            while ((key = watchService.take()) != null) {
-                try {
-                    for (WatchEvent<?> event : key.pollEvents()) {
-                        Path dir = (Path) key.watchable();
+		if (listOfFiles == null)
+			return;
 
-                        File file = new File(String.format("%s/%s", dir, event.context().toString()));
+		Arrays.stream(listOfFiles).filter(this::validForProcess).forEach(file -> {
+			if (FileUtils.getFileExtension(file).equals("xls") || FileUtils.getFileExtension(file).equals("xlsx")) {
+				logger.info("Black List file proceed {}", file.getName());
+				blackListService.readBlackList(file);
+			} else {
+				logger.info("World Check file proceed {}", file.getName());
+				if (file.getName().contains("delete")) {
+					worldCheckService.processDeleteFile(file);
+				} else {
+					worldCheckService.processUpdateFile(file);
+				}
+			}
+			try {
+				archiveFile(file);
+			} catch (IOException e) {
+				logger.error("Error while archive documents", e);
+			}
+		});
 
-                        if (FileUtils.getFileExtension(file).equals("xls") ||
-                                FileUtils.getFileExtension(file).equals("xlsx")) {
-                            logger.info("Black List file proceed {}", file.getName());
-                            blackListService.readBlackList(file);
-                        } else {
-                            logger.info("World Check file proceed {}", file.getName());
-                            if (file.getName().contains("delete")) {
-                                worldCheckService.processDeleteFile(file);
-                            } else {
-                                worldCheckService.processUpdateFile(file);
-                            }
-                        }
+		logger.debug("schedule end");
+	}
 
-                        archiveFile(file);
-                    }
+	private boolean validForProcess(File file) {
+		return file.isFile() && (file.getName().endsWith(".xls") || file.getName().endsWith(".xlsx")
+				|| file.getName().endsWith(".xml"));
+	}
 
-                    key.reset();
-                } catch (Exception e) {
-                    logger.error("Error while listening documents", e);
-                }
-            }
-        } catch (IOException | InterruptedException e) {
-            logger.error("Error while listening documents", e);
-        }
-    }
+	private void archiveFile(File file) throws IOException {
 
-    private void archiveFile(File file) throws IOException {
-    	
-    	logger.debug("start delete file");
-    	//file.delete();
-    	
         String fileExtension = FileUtils.getFileExtension(file);
-        String fileName = String.format("%s-%s.%s",file.getName().replace(String.format(".%s", fileExtension), ""), LocalDateTime.now(), fileExtension);
+        String fileName = String.format("%s-%s.%s",
+                file.getName().replace(String.format(".%s", fileExtension), ""),
+                LocalDateTime.now(),
+                fileExtension);
 
-        logger.error("source : ", file.toPath());
-        logger.error("target : ", Paths.get(String.format("%s/%s",archivePath,fileName)));
-        
-        Files.move(file.toPath(), Paths.get(String.format("%s/%s",archivePath,fileName)), REPLACE_EXISTING );
-        
+        Files.move(file.toPath(), Paths.get(String.format("%s/%s",
+                archivePath,
+                fileName)),
+                REPLACE_EXISTING
+        );
     }
 }
