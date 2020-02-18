@@ -19,11 +19,11 @@ public enum SourceSystem {
     private String indexName;
     private String name;
     private List<String> columns;
-    private Class type;
+    private Class<?> type;
 
     SourceSystem(String indexName,
                  String name,
-                 Class type,
+                 Class<?> type,
                  String... columns) {
         this.indexName = indexName;
         this.name = name;
@@ -39,7 +39,7 @@ public enum SourceSystem {
         return name;
     }
 
-    public Class getType() {
+    public Class<?> getType() {
         return type;
     }
 
