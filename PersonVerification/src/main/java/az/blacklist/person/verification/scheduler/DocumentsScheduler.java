@@ -47,10 +47,10 @@ public class DocumentsScheduler {
 		return new ConcurrentTaskScheduler();
 	}
 
-	@Scheduled(fixedDelay = 10_000)
+	@Scheduled(fixedDelay = 10000)
 	public void persistFile() {
 
-		logger.debug("schedule start");
+		logger.info("schedule start");
 
 		File folder = new File(uploadPath);
 		File[] listOfFiles = folder.listFiles();

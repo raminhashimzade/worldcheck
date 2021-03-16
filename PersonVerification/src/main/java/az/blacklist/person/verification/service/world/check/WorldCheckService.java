@@ -77,7 +77,13 @@ public class WorldCheckService extends FindPersonService<WorldCheckPerson> {
 			String lastName = null;
 
 			try {
+				int n = 0;
 				while (reader.hasNext()) {
+					
+					n += 1;
+					if (n%1000000 == 0)
+						logger.info("N rows update: {}", n);
+					
 					int event = reader.next();
 
 					switch (event) {

@@ -13,3 +13,4 @@ file:
 
 logging:
   path: "/opt/elasticsearch/log"
+ 
