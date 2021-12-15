@@ -61,7 +61,6 @@ public class WorldCheckService extends FindPersonService<WorldCheckPerson> {
 		return WORLD_CHECK;
 	}
 
-	// TODO daily and weekly update files
 	public void processUpdateFile(File file) {
 		logger.info("Started parsing file {} with update", file.getName());
 
