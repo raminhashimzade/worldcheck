@@ -87,6 +87,6 @@ public class PersonVerificationService {
     	res = res.replace("x", "kh");
     	res = res.replace("q", "g");
     	return res;
-    }	    
+    }
 
 }
