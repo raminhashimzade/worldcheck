@@ -6,7 +6,7 @@
 
     <groupId>az.blacklist</groupId>
     <artifactId>person-verification</artifactId>
-    <version>1.0-RELEASE</version>
+    <version>1.6</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

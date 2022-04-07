@@ -62,6 +62,8 @@ public class BlackListService extends FindPersonService<BlackListPerson> {
                 String fullName = formatter.formatCellValue(row.getCell(0));
                 if (StringUtils.isEmpty(fullName))
                     return;
+                
+                logger.info("fullName = " + fullName);
 
                 String dateOfBirth = formatter.formatCellValue(row.getCell(2)).isBlank() ?
                         null : formatter.formatCellValue(row.getCell(2)).replaceAll("/", "-");
